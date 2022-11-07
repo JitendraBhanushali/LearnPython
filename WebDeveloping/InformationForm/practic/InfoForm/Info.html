@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            padding: 10px 10px;
+            background-color: aqua;
+        }
+
+        .designform {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .designform input {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid red;
+            margin: 14px;
+            border-radius: 3px;
+            font-size: 20px;
+            display: inline-block
+        }
+
+        .formerror {
+            color: red;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .but {
+            border-radius: 10px;
+            font-size: 30px;
+            padding: 10px;
+            margin: auto;
+            text-align: center;
+            display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Information Form</h1>
+
+    <form action="#" name="myForm" metho="post" >
+        <div class="designform" id="fname">
+            Name:- <input type="text" id="fnm"><span class="formerror"></span>
+
+        </div>
+        <div class="designform" id="lname">
+            Last Name:- <input type="text" id="lnm"><span class="formerror"></span>
+        </div>
+        <div class="designform" id="fname">
+            Mobile:- <input type="phone" id="mo"><span class="formerror"></span>
+
+        </div>
+        <div class="designform" id="fname">
+            Email:- <input type="email" id="em"><span class="formerror"></span>
+
+        </div>
+        <div class="designform" id="fname">
+            Address:- <input type="text" id="adrs"><span class="formerror"></span>
+        </div>
+
+        <input class="but" type="button" value="Submit" onclick="validateForm()">
+    </form>
+    
+</body>
+<script>
+
+    function seterror(id, error) {
+        // sets error 
+        element = document.getElementById(id);
+        element.getElementsByClassName('formerror')[0].innerHTML = error;
+    }
+    function validateForm() {
+        var retuenval1 = true;
+
+        var name = document.forms['myForm']["fnm"].value;
+        // console.log(name);
+        if(name.length<5){
+            seterror("name", "Length of name is to short");
+            return retuenval1;
+        }
+
+
+        return retuenval1;
+    }
+
+</script>
+
+
+</html>

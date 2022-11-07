@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Personal Form</title>
+    <!-- <style>
+        *{
+            margin: auto;
+            padding: auto;
+            
+        }
+        h1 {
+            text-align: center;
+            background-color: rgb(223, 68, 68);
+            /* display: block; */
+            font-size: 40px;
+        }
+
+        .container {
+            font-size: 25px;
+            text-align: left;
+            text-align: center;
+
+
+        }
+
+        form {
+            border: 2px solid black;
+            display: block;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            border-radius: 30px;
+        }
+
+
+        input {
+            width: auto;
+            height: 3opx;
+            margin: 5px;
+            padding: 20px 10px;
+            border-radius: 10px;
+
+
+        }
+
+        button {
+            width: 120px;
+            height: 35px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 25px;
+            background-color: cornflowerblue;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        table {
+            /* padding-top: 20px; */
+            padding-top: 20px 20px 20px 20px;
+            /* padding-bottom: 20px; */
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 55px;
+            border-radius: 5px;
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <h1>Information Form</h1>
+
+    <div class="container">
+        <form>
+            <!-- First Name-->
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" placeholder="First Name" required><br>
+
+            <!-- Last Name -->
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" placeholder="Last Name" required><br>
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required><br>
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile</label>
+            <input type="number" id="mobile" placeholder="+91 Mobile " maxlength="13" minlength="10" required><br>
+
+            <!-- Gender -->
+            <label id="gender"> Gender:
+                <input type="radio" name="gender" id="gender" value="Male" checked>Male &nbsp;<input type="radio"
+                    name="gender" id="gender" value="Female">Female &nbsp;<input type="radio" name="gender" id="gender"
+                    value="Other">Other
+            </label><br>
+
+            <!-- Address -->
+            <label for="adrs">Address</label>
+            <textarea name="" id="adrs" rows="auto" required></textarea><br>
+
+            <!-- Dropdown List -->
+            <label for="country">Choos a Country:-</label>
+            <select name="country" id="country" value="">
+                <option> </option>
+            </select>&nbsp;&nbsp;
+
+            <label for="states">States</label>
+            <select name="states" id="states">
+            </select><br>
+
+
+            <!-- CheckBox -->
+            <label for="hobbies">Hobbies</label>
+            <input type="checkbox" name="hobbies" value="cricket">Cricket &nbsp;
+            <input type="checkbox" name="hobbies" value="football">Football &nbsp;
+            <input type="checkbox" name="hobbies" value="swimming">Swimming &nbsp;
+            <input type="checkbox" name="hobbies" value="inging">Singing &nbsp;
+            <input type="checkbox" name="hobbies" value="dancing">Dancing &nbsp;
+            <input type="checkbox" name="hobbies" value="gamming">Gamming &nbsp;<br>
+
+            <!-- Button -->
+            <button type="button" onclick="insert()">Submit</button>
+
+    </div>
+    </form>
+
+    <table id="tbl" border="1px" align="center">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>States</th>
+                <th>Hobbies</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+    <script>
+
+        var countryList = {
+
+            India: ['Gujrat', 'Panjab', 'Delhi', 'Maharashtra', 'Rajashthan'],
+            Austrailya: ['Aus', 'New South Wales', 'Queensland', 'South Australia', 'Tasmania'],
+            UAE: ['Dubai', 'Abu Dhabi', 'Sharjah'],
+            UK: ['Scotland', 'Northern Ireland', 'Wales', 'Northern Ireland']
+        }
+
+        country = document.getElementById("country"); //parent select element
+        states = document.getElementById("states"); //child select element
+
+        for (key in countryList) { //populate the parent select element with array key
+            country.innerHTML = country.innerHTML + '<option>' + key + '</option>';
+        }
+
+        country.addEventListener('change', function populate_child(e) {
+            states.innerHTML = '';
+            itm = e.target.value;
+            if (itm in countryList) {
+                for (i = 0; i < countryList[itm].length; i++) {
+                    states.innerHTML = states.innerHTML + '<option>' + countryList[itm][i] + '</option>';
+                }
+            }
+        });
+
+        function insert() {
+
+
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var adrs = document.getElementById('adrs').value;
+            var country = document.getElementById('country').value;
+            var states = document.getElementById('states').value;
+            var hobbies = document.getElementById('checked[id="hobbies"]:checked').value;
+
+
+            var table = `<tr>
+            <td>${fname}</td>
+            <td>${lname}</td>
+            <td>${email}</td>
+            <td>${mobile}</td>
+            <td>${gender}</td>
+            <td>${adrs}</td>
+            <td>${country}</td>
+            <td>${states}</td>
+            <td>${hobbies}</td>
+
+            
+            
+        </tr>`;
+            document.getElementById('tbl').innerHTML += table;
+
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById('fname').value = "";
+            document.getElementById('lname').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('mobile').value = "";
+            document.getElementById('gender').value = "";
+            document.getElementById('adrs').value = "";
+            document.getElementById('country').value = "";
+            document.getElementById('states').value = "";
+            document.getElementById('hobbies').value = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

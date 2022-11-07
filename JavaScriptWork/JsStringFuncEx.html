@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Functions</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        var str = "This is a string";
+        console.log(str);
+
+        // First occurrence of substring
+        var position = str.indexOf('is')
+        console.log(position)
+
+        // Last occurrence of substring
+        position = str.lastIndexOf('is')
+        console.log(position)
+
+        //Substring of string
+        var substr = str.slice(1,6) //Nagativ value is accepted
+        console.log("Slicing Sting:- \t"+ substr)
+
+        //Substring of string
+        var substr = str.substring(1,7) //Nagativ value is not accepted
+        console.log("Substring is:- \t"+ substr)
+
+        //Substring of string using substr 
+        var substr1 = str.substr(1,4) 
+        console.log("Using substr:- \t"+ substr1)
+
+        // Replace the String value
+        var rpc = str.replace('string','Jerry')
+        console.log("This is Old String:-  "+ str)
+        console.log("This is New String:-  "+ rpc)
+        
+        //Print String in Uppercase & Lowercase
+        console.log("Convert into Uppercase:- "+ str.toUpperCase())
+        console.log("Convert into Lowercase:- "+ str.toLowerCase())
+
+        //Erase Whitespaces
+        var strwhitespces ="     This is a       White space       string       "
+        console.log("Without trim() used:- "+ strwhitespces)
+        console.log("With trim() used:- "+ strwhitespces.trim()) //Trim the both sides of spaces
+
+        //charAt() use is find the index character
+        var char3 = str.charAt(6)
+        console.log(char3)
+
+
+    </script>
+</body>
+
+</html>

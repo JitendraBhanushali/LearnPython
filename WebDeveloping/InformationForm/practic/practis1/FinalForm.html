@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> jQuery library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <style>
+        button {
+            width: 120px;
+            height: 35px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 25px;
+            background-color: cornflowerblue;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        table {
+            padding-top: 20px 20px 20px 20px;
+            /* padding-bottom: 20px; */
+            /* padding-top: 20px; */
+
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 2px;
+        }
+
+        .container {
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+    <title>Final Form</title>
+</head>
+
+<body>
+    <h1 class="text-info text-center">Information Form</h1>
+    <hr>
+    <div class="container">
+
+        <div class="col-sm-12" style="text-align:center ;">
+            <div class="col-sm-6">
+                <div class="row">
+                    <!-- First Name-->
+                    <h2 class="text-info">First Name</h2>
+                    <input type="text" id="fname" placeholder="First Name" required><br>
+                </div>
+                <div class="row">
+                    <!-- Email -->
+                    <h2 class="text-info">Email</h2>
+                    <input type="email" id="email" placeholder="Email" required><br>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <!-- Last Name -->
+                    <h2 class="text-info">Last Name</h2>
+                    <input type="text" id="lname" placeholder="Last Name" required><br>
+
+                </div>
+                <div class="row">
+                    <!-- Mobile Number -->
+                    <h2 class="text-info">Email</h2>
+                    <input type="number" id="mobile" placeholder="+91 Mobile " maxlength="13" minlength="10"
+                        required><br>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="col-sm-12" style="text-align:center;">
+            <div class="col-sm-6">
+                <!-- Gender -->
+                <h2 class="text-info">Gender:</h2>
+                <input type="radio" name="gender" id="gender" value="Male" checked>Male &nbsp;<input type="radio"
+                    name="gender" id="gender" value="Female">Female &nbsp;<input type="radio" name="gender" id="gender"
+                    value="Other">Other
+                </label><br>
+            </div>
+            <div class="col-sm-6">
+
+                <!-- Address -->
+                <h2 class="text-info">Address</h2>
+                <textarea name="" id="adrs" style="min-width: 200px;min-height: 150px;"></textarea>
+
+            </div>
+        </div>
+        <div class="col-sm-12" style="text-align:center ;">
+            <div class="col-sm-6">
+                <!-- Dropdown List -->
+                <h2 class="text-info">Choos a Country:</h2>
+                <select name="country" id="country" value="">
+                    <option>Country</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <!-- Dropdown List -->
+                <h2 class="text-info">Choos a States:</h2>
+                <select name="states" id="states">
+                </select><br>
+            </div>
+        </div>
+        <!-- CheckBox -->
+        <div style="text-align: center;">
+            <h2 class="text-info">Hobbies</h2>
+            <input type="checkbox" name="hobbies1" id="hobbies1" value="Cricket">Cricket &nbsp;
+            <input type="checkbox" name="hobbies2" value="Football">Football &nbsp;
+            <input type="checkbox" name="hobbies3" value="Swimming">Swimming &nbsp;
+            <input type="checkbox" name="hobbies4" value="Singing">Singing &nbsp;
+            <input type="checkbox" name="hobbies5" value="Dancing">Dancing &nbsp;
+            <input type="checkbox" name="hobbies6" value="Gamming">Gamming &nbsp;
+        </div>
+        <div style="text-align: center;">
+            <!-- Button -->
+            <button type="button" onclick="insert()">Submit</button>
+        </div>
+    </div>
+    <div class="row table_detail">
+    <table id="tbl" border="1px" align="center">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>States</th>
+                <th>Hobbies</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+</div>  
+    <script>
+
+        var countryList = {
+
+            India: ['Gujrat', 'Panjab', 'Delhi', 'Maharashtra', 'Rajashthan'],
+            Austrailya: ['Aus', 'New South Wales', 'Queensland', 'South Australia', 'Tasmania'],
+            UAE: ['Dubai', 'Abu Dhabi', 'Sharjah'],
+            UK: ['Scotland', 'Northern Ireland', 'Wales', 'Northern Ireland']
+        }
+
+        country = document.getElementById("country"); //parent select element
+        states = document.getElementById("states"); //child select element
+
+        for (key in countryList) { //populate the parent select element with array key
+            country.innerHTML = country.innerHTML + '<option>' + key + '</option>';
+        }
+
+        country.addEventListener('change', function populate_child(e) {
+            states.innerHTML = '';
+            itm = e.target.value;
+            if (itm in countryList) {
+                for (i = 0; i < countryList[itm].length; i++) {
+                    states.innerHTML = states.innerHTML + '<option>' + countryList[itm][i] + '</option>';
+                }
+            }
+        });
+
+        function insert() {
+
+
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var adrs = document.getElementById('adrs').value;
+            var country = document.getElementById('country').value;
+            var states = document.getElementById('states').value;
+            var hobbies1 = document.getElementById('hobbies1').value;
+
+
+            var table = `<tr>
+            <td>${fname}</td>
+            <td>${lname}</td>
+            <td>${email}</td>
+            <td>${mobile}</td>
+            <td>${gender}</td>
+            <td>${adrs}</td>
+            <td>${country}</td>
+            <td>${states}</td>
+            <td>${hobbies1}</td>          
+            
+        </tr>`;
+            document.getElementById('tbl').innerHTML += table;
+
+            // Locat Storage
+            let user_records = new Array();
+            user_records = JSON.parse(localStorage.getItem("users"))
+            user_records.push({
+                "fname": fname,
+                "lname": lname,
+                "email": email,
+                "mobile": mobile,
+                "gender": gender,
+                "adrs": adrs,
+                "country": country,
+                "states": states,
+                "hobbies1": hobbies1
+            })
+            // console.log(infoStorage);
+            localStorage.setItem('users', JSON.stringify(user_records));
+            
+            clearForm();
+            
+            
+        }
+
+        function clearForm() {
+            // debugger;
+            document.getElementById('fname').value = " ";
+            document.getElementById('lname').value = " ";
+            document.getElementById('email').value = " ";
+            document.getElementById('mobile').value = " ";
+            document.getElementById('gender').value = " ";
+            document.getElementById('adrs').value = " ";
+            document.getElementById('country').value = " ";
+            document.getElementById('states').value = " ";
+            document.getElementById('hobbies1').value = " ";
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

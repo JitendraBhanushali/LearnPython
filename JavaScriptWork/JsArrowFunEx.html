@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Ex</title>
+</head>
+
+<body>
+    <div class="container">
+        This is Arrow function tutorial
+    </div>
+
+    <script>
+
+        // This is a noramlly call function
+        // function greet(){
+        //     console.log("Good Morning")
+        // }
+        // greet()
+
+        // This is a Arrow Function 
+        //    let greet = () => {
+        //         console.log("Good Morning")
+        //     }
+        //     greet()
+
+        // This is a function and function rewuer closing
+        // let goodvibes = () => console.log("Good Morning Dudu")
+        // goodvibes()         //closwe the function
+
+        // This function return the valu
+        // let sum = (a, b) => {
+        //     return a+b
+        // }
+
+        // let sum = (a, b) => a + b       //no Requer return 
+
+        // This function is division function
+        // let half = a => a/2     // no need of parentthesis
+
+        // This is a time out function
+        // setTimeout(() => {
+        //     console.log("This is Timeout Function")
+        // }, 3000);
+
+    //     let obj1 ={ 
+    //         greeting: "Hiiiiii",
+    //         names :["Jerry", "herry", "perry", "himluu"],
+    //             speak(){
+    //         this.names.forEach((student)=> {
+    //             console.log(this.greeting,"Heloooo", student)   //greeting is allowd because defualt function is not here           
+                
+    //         });
+    //     }
+    // }
+    // obj1.speak();
+
+    let obj2 ={ 
+            greeting: "Hiiiiii",
+            names :["Jerry", "herry", "perry", "himluu"],
+                speak(){
+            this.names.forEach(function s(student){
+                console.log(this.greeting,"Heloooo", student)   //greeting is not allowd because defualt function is here.           
+                
+            });
+        }
+    }
+    obj2.speak();
+    </script>
+</body>
+
+</html>

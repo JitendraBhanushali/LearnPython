@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Information Form</title>
+    <style>
+        .container {
+            font-size: 30px;
+            /* text-align: center; */
+            width: 50%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <fieldset style="width: 50%;margin:0 auto;">
+        <!-- <fieldset> -->
+
+            <legend>Information Form</legend>
+            <div class="container">
+                First Name:
+                <input type="text" id="fname" required>&nbsp;&nbsp;
+                Last Name:
+                <input type="text" id="lname" required><br>
+                Email:
+                <input type="email" id="email" required>&nbsp;&nbsp;
+                Mobile:
+                <input type="number" id="mobile" required><br>
+                    <div id="gender"> Gender: <br>
+                        <input type="radio" name="gender" id="gender" value="Male" checked>Male &nbsp;<input type="radio"
+                            name="gender" id="gender" value="Female">Female &nbsp;<input type="radio" name="gender"
+                            id="gender" value="Other">Other<br>
+                    </div>
+                Address: <br>
+                <textarea name="" id="adrs" rows="auto" required></textarea><br>
+
+                <label for="country">Choos a Country:-</label>
+                <select name="country" id="country" value="">
+                    <option> </option>
+                </select>&nbsp;&nbsp;
+
+                <label for="states">States</label>
+                <select name="states" id="states">
+                </select><br>
+
+                <label for="hobbies">Hobbies</label><br>
+                <input type="checkbox" name="hobbies" value="cricket">Cricket &nbsp;
+                <input type="checkbox" name="hobbies" value="football">Football &nbsp;
+                <input type="checkbox" name="hobbies" value="swimming">Swimming &nbsp;
+                <input type="checkbox" name="hobbies" value="inging">Singing &nbsp;
+                <input type="checkbox" name="hobbies" value="dancing">Dancing &nbsp;
+                <input type="checkbox" name="hobbies" value="gamming">Gamming &nbsp;<br>
+                <button type="button" onclick="insert()">Submit</button>
+            </div>
+        </fieldset>
+
+        <fieldset style="width: 50%;margin:0 auto;">
+            <legend>Information</legend>
+            <!-- <table style="width:100%;" border="1px;" id="tbl"> -->
+                <table id="tbl">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Country</th>
+                        <th>States</th>
+                        <th>Hobbies</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="tbl"></tbody>
+            </table>
+        </fieldset>
+    </div>
+
+    <script>
+
+        var countryList = {
+
+            India: ['Gujrat', 'Panjab', 'Delhi', 'Maharashtra', 'Rajashthan'],
+            Austrailya: ['Aus', 'New South Wales', 'Queensland', 'South Australia', 'Tasmania'],
+            UAE: ['Dubai', 'Abu Dhabi', 'Sharjah'],
+            UK: ['Scotland', 'Northern Ireland', 'Wales', 'Northern Ireland']
+        }
+
+        country = document.getElementById("country"); //parent select element
+        states = document.getElementById("states"); //child select element
+
+        for (key in countryList) { //populate the parent select element with array key
+            country.innerHTML = country.innerHTML + '<option>' + key + '</option>';
+        }
+
+        country.addEventListener('change', function populate_child(e) {
+            states.innerHTML = '';
+            itm = e.target.value;
+            if (itm in countryList) {
+                for (i = 0; i < countryList[itm].length; i++) {
+                    states.innerHTML = states.innerHTML + '<option>' + countryList[itm][i] + '</option>';
+                }
+            }
+        });
+
+
+
+
+        function insert() {
+
+
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var adrs = document.getElementById('adrs').value;
+            var country = document.getElementById('country').value;
+            var states = document.getElementById('states').value;
+            var hobbies = document.getElementById('hobbies').checked?document.getElementById('hobbies').value.' '; //new line add
+
+            var table = `<tr>
+                        <td>${fname}</td>
+                        <td>${lname}</td>
+                        <td>${email}</td>
+                        <td>${mobile}</td>
+                        <td>${gender}</td>
+                        <td>${adrs}</td>
+                        <td>${country}</td>
+                        <td>${states}</td>
+                        <td>${hobbies}</td>
+
+                        
+                        
+                    </tr>`;
+            document.getElementById('tbl').innerHTML += table;
+
+            clearForm();
+        }
+
+        function clearForm() {
+            document.getElementById('fname').value = "";
+            document.getElementById('lname').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('mobile').value = "";
+            document.getElementById('gender').value = "";
+            document.getElementById('adrs').value = "";
+            document.getElementById('country').value = "";
+            document.getElementById('states').value = "";
+            document.getElementById('hobbies').value = "";
+
+        }
+    </script>
+
+
+</body>
+
+</html>

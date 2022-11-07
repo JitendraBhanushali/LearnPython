@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope and Condition Ex</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>Item-1</li>
+            <li>Item-2</li>
+            <li>Item-3</li>
+            <li>Item-4</li>
+            <li>Item-5</li>
+            <li>Item-6</li>
+            <li>Item-7</li>
+        </ul>
+    </div>
+
+    <script>
+
+        // Variable Decleration
+
+        // var string1 = "This is a string"
+        // var string1 = "This is a string2"       //Redecler variable and overright variable
+        // console.log(string1)
+
+        // let a = "Jitu"          //globalle variable 
+        // {
+        //     let a = "Jitu1111111"       //Block variable 
+        //     console.log(a)
+        // }
+        // console.log(a)
+
+        // Constant Decleation
+
+        // const a = "Can't change the value"
+        // // const a = "why? Can't change the value"      // Give the error:- JsScope&ConditionEx.html:40 Uncaught SyntaxError: Identifier 'a' has already been declared (at JsScope&ConditionEx.html:40:15)
+        // console.log(a)
+
+        // If - Else Leder Example
+        // let age = 35
+        // let age = 7
+
+        // if (age > 18) {
+        //     console.log("You can drive")
+        // }
+        // else if (age == 5){
+        //     console.log("Your age is 5")
+        // }
+        // else if (age == 7){
+        //     console.log("Your age is 7")
+        // }
+        // else {
+        //     console.log("You can not drive")
+        // }
+
+        // Switch case Statement Example
+        const cup = 4;
+        switch (cup) {
+            case 4:
+                console.log("Cup value is 4")
+                break;
+            case 10:
+                console.log("Cup value is 10")
+                break;
+            case 20:
+                console.log("Cup value is 20")
+                break;
+            case 40:
+                console.log("Cup value is 40")
+                break;
+            default:
+                console.log('Your value is not match with 4, 10, 20, 40')
+                break;
+        }
+
+    </script>
+
+</body>
+
+</html>

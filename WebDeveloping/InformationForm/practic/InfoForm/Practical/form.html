@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Form</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Information Form</h1>
+    </div>
+    <div>
+        <form>
+
+            <label for="F_name">First Name </label> <div><input type="text" id="F_name" maxlength = "100" placeholder="Enter First Name" ></div><br>
+            <label for="L_name">Last Name</label><div><input type="text" id="L_name" maxlength="80" placeholder="Enter last Name" r</div><br>
+            <label for="Email">Email</label> </label> <div><input type="email" id="Email" placeholder="Enter Email" ></div><br>
+            <label for="Mobile">Mobile</label><div><input type="text" id="Mobile" minlength="10" maxlength="13" placeholder="+91" ></div><br>
+            <label for="Gender"> Gender</label><div><input type="radio" name="Gender" id="Gender">Male<input type="radio" name="Gender" id="Gender">Female<input type="radio" name="Gender" id="Gender">Other</div><br>
+            <label for="Address">Address</label><div><input type="text" name="" id="Address" ></div><br>
+            <div>Write about your self <br> <textarea name="myText" id="Text_Area" cols="30" rows="10"></textarea></div>
+            <button id="sub"> Submit </button>
+        
+            </form>
+
+            <table id="display">
+                <tr>
+                    <th>F_name</th><br>
+                    <th>L_name</th><br>
+                    <th>Email</th><br>
+                    <th>Mobile</th><br>
+                    <th>Gender</th><br>
+                    <th>Address</th><br>
+                    <th>Text_Area</th><br>
+                </tr>
+            </table>
+        
+    </div>
+
+    <!-- <script>
+        let sub = document.getElementById("sub");
+        sub.addEventListener("click", displayDitails);
+
+        let row = 1;
+
+        function displayDitails(){
+            let Fnm = document.getElementById("Fnm").value;
+            let Lnm = document.getElementById("Lnm").value;
+            let Em = document.getElementById("Em").value;
+            let Mo = document.getElementById("Mo").value;
+            let Gn = document.getElementById("Gn").value;
+            let Add = document.getElementById("Add").value;
+            let Ta = document.getElementById("Ta").value;
+
+            let display = documnet.getElementById("displya");
+
+            let newRow = display.insertRow(row);
+
+            let cell1 = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+            let cell4 = newRow.insertCell(3);
+            let cell5 = newRow.insertCell(4);
+            let cell6 = newRow.insertCell(5);
+            let cell7 = newRow.insertCell(6);
+
+
+            cell1.innerHTML = Fnm;
+            cell2.innerHTML = Lnm;
+            cell3.innerHTML = Em;
+            cell4.innerHTML = Mo;
+            cell5.innerHTML = Gn;
+            cell6.innerHTML = Add;
+            cell7.innerHTML = Ta;
+
+            row++;
+
+
+
+
+
+        }
+    </script> -->
+    <script src="script.js"></script>
+</body>
+</html>

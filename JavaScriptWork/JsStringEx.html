@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | Strings and Strings Method</title>
+</head>
+<body>
+    <div class="container">
+        <h1>This is a Heading</h1>
+        <div id="content"></div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas minima voluptates sit illum saepe sapiente. Ullam reiciendis provident ipsum amet minus fuga suscipit esse explicabo facilis. Odio eligendi recusandae cumque, eveniet aliquam dolore ea.</p>
+    </div>
+
+    <script>
+        var string = "This is a String";
+        var string1 = 'This is also String';
+        console.log(string);
+        console.log(string1);
+
+        var name = "Jerry";
+        var name1 = "Jitendra";
+        var person = `${name} Is a good and nice person and his real name is ${name1}`
+        console.log(person);
+
+        var length = person.length;
+        console.log(`This is a length of person:- ${length}`);
+
+        console.log("Hello world \nJerry is a good boy")
+
+        document.getElementById('content').innerHTML = '<h1>Input by javaScript </h1>'
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* This is a External CSS */
+  
+
+
+.h{
+
+   font-family: "Sofia", sans-serif;
+    color : blue;
+    background-color: yellow;
+}
+
+#firstpera {
+    background-color: red;
+    height: 100px;
+    width: 450px;
+    border-color: blck;
+    border-style: solid;
+}
+
+#secondspera {
+    background-color: gray;
+    height: 100px;
+    width: 250px;
+    border: 1px solid yellow;
+    border-radius: 3px;
+}
+
+#thirdspera {
+    color: red;
+    /* background-color: pink; */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMTGdS4FZN0AWAahgNwZHBAoJq0yGBb5Tj9w&usqp=CAU');
+    height: 100px;
+    width: 200px;
+    border: 1.5px solid gold;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <title>Validation</title>
+
+    <style>
+        .container {
+            margin-top: 70px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .input-area {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 10px;
+
+        }
+
+        .table_formate {
+            padding: 20px;
+            padding: 20px;
+            /* border: 8px solid forestgreen; */
+            margin-top: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-info text-center">Information Form</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <form action="#" class="needs-validation" novalidate autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6 input-area">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="" id="fname" class="form-control" onblur="validate_fname(this.id)" required>
+                            <!-- <div class="invalid-feedback">
+                                Please Enter Your First Name
+                            </div> -->
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="lname">Last Name</label>
+                            <input type="text" name="" id="lname" class="form-control" onblur="validate_lname(this.id)" required>
+                            <div class="invalid-feedback">
+                                Please Enter Your Last Name
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="email">Email</label>
+                            <input type="email" name="" id="email" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please Enter Your Email
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="number">Mobile</label>
+                            <input type="text" name="" id="number" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Please Enter Your Mobile Number
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" name="gender" id="gender" value="Male">Male&nbsp;<input type="radio"
+                                name="gender" id="gender" value="Femamle">Female &nbsp;<input type="radio" name="gender"
+                                id="gender" value="Other">Other
+                        </div><br>
+                        <div class="col-sm-6">
+                            <label for="adrs">Address</label><br>
+                            <textarea name="adrs" id="adrs"></textarea>
+                        </div><br>
+
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="counrty">Choos a Country</label>&nbsp;
+                            <select name="country" id="country" value="">
+                                <option>Country</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="states">Choos a States</label>&nbsp;
+                            <select name="states" id="states">
+                            </select>
+                        </div>
+                    </div><br><br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- CheckBox -->
+                            <label for="hobbies">Hobbies</label><br>
+                            <input type="checkbox" name="hobbies" id="cricket" value="Cricket">Cricket &nbsp;
+                            <input type="checkbox" name="hobbies" id="football" value="Football">Football &nbsp;
+                            <input type="checkbox" name="hobbies" id="swimming" value="Swimming">Swimming &nbsp;
+                            <input type="checkbox" name="hobbies" id="singing" value="Singing">Singing &nbsp;
+                            <input type="checkbox" name="hobbies" id="dancing" value="Dancing">Dancing &nbsp;
+                            <input type="checkbox" name="hobbies" id="gamming" value="Gamming">Gamming &nbsp;
+                        </div>
+                    </div><br>
+                    <div class="row" style="text-align:center;">
+                        <!-- <input value="Submit" class="btn btn-primary" onclick="insert()"> -->
+                        <button class="btn btn-primary" onclick="insert()">submit</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    function validate_fname(id){
+        var fname = document.getElementById(id);
+        var regExp = /^[a-zA-Z ]+$/
+        if(!regExp.test(fname.value)){
+            alert("Enter Valid name");
+            fname.style.border = "2px solid red" 
+            // fname.focus();
+            return false;
+        }
+        fname.style.border = "2px solid green";
+    }
+    function validate_lname(id){
+        var lname = document.getElementById(id);
+        var regExp = /^[a-zA-Z ]+$/
+        if(!regExp.test(lname.value)){
+            alert("Enter Valid name");
+            lname.style.border = "2px solid red" 
+            // fname.focus();
+            return false;
+        }
+        lname.style.border = "2px solid green";
+    }
+
+</script>
+</html>

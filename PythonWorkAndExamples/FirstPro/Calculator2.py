@@ -1,0 +1,23 @@
+print("This is a Calculator2 with easy way")
+print("Sum of two numbers")
+nm1 = input("Enter first number:- ")
+nm2 = input("Enter second number:- ")
+print("Ans:-",int(nm1)+int(nm2))
+
+print("\n")
+print("Subtraction of two numbers")
+nm1 = input("Enter first number:- ")
+nm2 = input("Enter second number:- ")
+print("Ans:-",int(nm1)-int(nm2))
+
+print("\n")
+print("Multiplication of two numbers")
+nm1 = input("Enter first number:- ")
+nm2 = input("Enter second number:- ")
+print("Ans:-",int(nm1)*int(nm2))
+
+print("\n")
+print("Division of two numbers")
+nm1 = input("Enter first number:- ")
+nm2 = input("Enter second number:- ")
+print("Ans:-",int(nm1)/int(nm2))

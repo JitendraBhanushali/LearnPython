@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script> -->
+    <title>InformationForm</title>
+
+</head>
+
+<body>
+    <h1>Information Form</h1>
+    <hr>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="fname"> First Name<span>*</span></label>
+                    <input id="fname" type="text" name="fname" required /></div>
+                <div class="col-lg-6">
+                    <label for="lname"> Last Name<span>*</span></label>
+                    <input id="lname" type="text" name="lname" required /></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                    <label for="eaddress">Email Address<span>*</span></label>
+                    <input id="eaddress" type="text" name="eaddress" required /></div>
+                <div class="col-sm-6">
+                    <label for="number">Mobile<span>*</span></label>
+                    <input id="number" type="text" placeholder="+91 Enter Mobile Number" maxlength="13" minlength="10" required />
+              </div>
+            <button type="button" onclick="insert()">Submit</button>
+              
+            
+            
+            
+
+            <!-- Gender:
+            <input type="radio" name="gender" id="gender" value="Male" checked />Male&nbsp;<input type="radio"
+                name="gender" id="gender" value="Female" />Female&nbsp;<input type="radio" name="gender" id="gender"
+                value="Other" />Other <br>
+            Address:
+            <textarea name="" id="adrs" rows="auto" required></textarea><br>
+
+            <label for="country">Choos a Country:-</label>
+            <select name="country" id="country" value="">
+                <option> </option>
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <label for="states">States</label>
+            <select name="states" id="states">
+            </select><br>
+            Hobbies:-&nbsp;
+            <input type="checkbox" name="hobbies" value="cricket">Cricket &nbsp;
+            <input type="checkbox" name="hobbies" value="football">Football &nbsp;
+            <input type="checkbox" name="hobbies" value="swimming">Swimming &nbsp;
+            <input type="checkbox" name="hobbies" value="inging">Singing &nbsp;
+            <input type="checkbox" name="hobbies" value="dancing">Dancing &nbsp;
+            <input type="checkbox" name="hobbies" value="gamming">Gamming &nbsp;<br>
+
+            <button type="button" onclick="insert()">Submit</button> -->
+
+        </form>
+    </div>
+
+</body>
+
+</html>

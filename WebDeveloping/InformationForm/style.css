@@ -1,0 +1,41 @@
+h1{
+    text-align: center;
+    color: chocolate;
+    background-color: aqua;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.container{
+    font-size: 25px;
+    text-align: left;
+    padding: 10px;
+
+}
+input{
+    /* height: 30px;
+    width: 35%;
+    margin: 10px; */
+}
+form{
+    border: 2px solid black;
+    border-radius: 10px;
+    width:97%;
+    padding: 20px;
+}
+button{
+    color: burlywood;
+    background-color: black;
+    width: 13%;
+    border-radius: 10px;
+    height: 44px;
+    margin: 30px;
+}
+button:hover{
+    color: black;
+    background-color: forestgreen;
+    width: 13%;
+    border-radius: 10px;
+    height: 44px;
+    margin: 30px;
+    font-size: 20px;
+}

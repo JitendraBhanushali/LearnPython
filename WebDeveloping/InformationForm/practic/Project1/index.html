@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry's Fitness</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<link rel="stylesheet" href="css/style.css">
+<style>
+    /* Css reset */
+    body{
+        font-family: "Sofia", sans-serif;
+        color: white;
+        margin: 0px;
+        padding: 0px;
+        background: url('img/bg.jpg');
+    }
+    .left{
+        /* color: white; */
+        position: absolute;
+        left: 80px;
+        top: 12px;
+        border: 2px solid red;
+        display: inline-block;
+    
+    }
+    .left img{
+        width: 60px;
+    }
+    .left div{
+        font-size: 22px;
+        text-align: center;
+    }
+    .mid{
+        /* color: white; */
+        display: block;
+        width: 850px;
+        margin: 12px auto;
+        border: 2px solid white;
+    }
+    .right{
+        /* color: white; */
+        position: absolute;
+        right: 30px;
+        top: 12px;
+        border: 2px solid brown;
+        display: inline-block;
+    }
+    .btn{
+        margin: 0px 9px;
+        background-color: black;
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid yellow;
+        cursor: pointer;
+        border-radius: 10px;
+        font-family: "Sofia", sans-serif;
+
+    }
+    .btn:hover{
+        background-color: brown;
+    }
+    .navbar{
+        display: inline-block;
+    }
+    .navbar li{
+        /* color: white; */
+        display: inline-block;
+        font-size: 20px;
+    }
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding: 33px 52px;
+    }
+    .navbar li a:hover, .navbar li a:active{
+        text-decoration: underline;
+        color: gray;
+    }
+    .container{
+        /* text-align: center; */
+        /* display: inline-block; */
+        border: 2px solid white;
+        margin: 125px 85px;
+        padding: 3px 3px;
+        border-radius: 5px;
+        width: 30%;
+    }
+    .form-group input{
+        text-align: center;
+        display: block;
+        width: 270px;
+        padding: 5px;
+        border: 2px solid black;
+        margin: 3px auto;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <header>
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/logo.jpg" alt="">
+            <div>J F</div>
+
+        </div>
+        <!-- Middle box for navigation -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#" class="active">About Us</a></li>
+                <li><a href="#" class="active">Fitness</a></li>
+                <li><a href="#" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Right box for buttons -->
+        <div class="right">
+            <button class="btn">Call Us</button><button class="btn"> Email Us</button>
+
+
+        </div>
+    </header>
+    <div class="container">
+        <h3>Join the Best GYM in Ahmedabad Now</h3>
+        <form action="notable.php">
+            <div class="form-group">
+                <input type="text" name="" id="" placeholder="Enter your name">
+                <input type="text" name="" id="" placeholder="Enter your name">
+                <input type="text" name="" id="" placeholder="Enter your name">
+                <input type="text" name="" id="" placeholder="Enter your name">
+            </div>
+            <button class="btn"> submit </button>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!-- This is a Final submited form -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>InformationForm</title>
+
+    <!-- Creating CSS -->
+    <style>
+        body{
+            background-color: aqua;
+        }
+        .container {
+            margin-top: 70px;
+            border: 10px solid black;
+            padding: 20px;
+            border-color: rgb(158, 72, 72);
+        }
+        form{
+            background-color: bisque;
+            display: inline-block;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        .input-area {
+            margin-bottom: 20px;
+            /* position: fixed; */
+        }
+
+        table {
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 10px;
+            border-color: blue;
+            color: brown;
+            border: 5px solid rgb(194, 67, 67);
+            
+        }
+
+        .table_formate {
+            padding: 20px;
+            padding: 20px;
+            /* border: 8px solid forestgreen; */
+            margin-top: 24px;
+        }
+
+        th {
+            padding: 21px;
+        }
+
+        .error {
+            color: red;
+        }
+        label{
+            color: rgb(8, 63, 60);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 class="text-info text-center">Information Form</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <form class="needs-validation" id="validation" autocomplete="off" novalidate>
+                    <div class="row">
+
+                        <!-- First Name -->
+                        <div class="col-sm-6 input-area">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="fname" id="fname" class="form-control validate-field" maxlength="100" required>
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="col-sm-6 input-area">
+                            <label for="lname">Last Name</label>
+                            <input type="text" name="lname" id="lname" class="form-control validate-field" maxlength="80" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-sm-6 input-area">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control validate-field" required>
+                        </div>
+
+                        <!-- Mobile -->
+                        <div class="col-sm-6 input-area">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" name="mobile" id="mobile" class="form-control validate-field" maxlength="13"
+                                minlength="10" required>
+
+                        </div>
+
+                        <!-- Gender Radio -->
+                        <div class="col-sm-6 gen">
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" name="gender" id="gender" value="Male">Male&nbsp;<input type="radio"
+                                name="gender" id="gender" value="Female">Female &nbsp;<input type="radio" name="gender"
+                                id="gender" value="Other">Other
+                        </div><br>
+
+                        <!-- Address -->
+                        <div class="col-sm-6">
+                            <label for="adrs">Address</label><br>
+                            <textarea name="adrs" id="adrs"></textarea>
+                        </div><br>
+
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="counrty">Choos a Country</label>&nbsp;
+                            <select name="country" id="country" value="">
+                                <option>select defualt</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="states">Choos a States</label>&nbsp;
+                            <select name="states" id="states">
+                                <option aria-placeholder="States">select defualt</option>
+                            </select>
+                        </div>
+                    </div><br><br>
+
+                    <!-- Hobbies Checkbox -->
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <!-- CheckBox -->
+                            <label for="hobbies">Hobbies</label><br>
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="cricket"
+                                value="Cricket">Cricket &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="football"
+                                value="Football">Football &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="swimming"
+                                value="Swimming">Swimming &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="singing"
+                                value="Singing">Singing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="dancing"
+                                value="Dancing">Dancing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="gamming"
+                                value="Gamming">Gamming &nbsp;
+
+                        </div>
+
+                    </div><br>
+
+                    <!-- Submit Buuton -->
+                    <div class="row" style="text-align:center;">
+                        <input value="Submit" class="btn btn-success submitform">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Creating A Table -->
+    <table id="tbl" border="1px" align="center" style="padding-top: 10px;">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>States</th>
+                <th>Hobbies</th>
+                <th>Action</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+
+    <!-- Calling JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="validation.js"></script>
+
+</body>
+
+</html>

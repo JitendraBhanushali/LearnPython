@@ -1,0 +1,394 @@
+<!-- This is a Final submited form -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+    <title>InformationForm</title>
+
+    <style>
+        .container {
+            margin-top: 70px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+        .input-area {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: auto;
+            height: auto;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 28px;
+            border-radius: 10px;
+
+        }
+
+        .table_formate {
+            padding: 20px;
+            padding: 20px;
+            /* border: 8px solid forestgreen; */
+            margin-top: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-info text-center">Information Form</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12">
+                <form class="needs-validation" novalidate autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6 input-area">
+                            <label for="fname">First Name</label>
+                            <input type="text" name="" id="fname" class="validate_fname" maxlength="100"
+                                required>
+                            <!-- <div class="invalid-feedback">
+                                Please Enter Your First Name
+                            </div> -->
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="lname">Last Name</label>
+                            <input type="text" name="" id="lname" class=" validate_lname" maxlength="80"
+                                required>
+                            <!-- <div class="invalid-feedback">
+                                Please Enter Your Last Name
+                            </div> -->
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="email">Email</label>
+                            <input type="email" name="" id="email" class="form-control validate_email" required>
+                            <!-- <div class="invalid-feedback">
+                                Please Enter Your Email
+                            </div> -->
+                        </div>
+
+                        <div class="col-sm-6 input-area">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" name="" id="mobile" class="form-control validate_mobileno" required>
+                            <!-- <div class="invalid-feedback">
+                                Please Enter Your Mobile Number
+                            </div> -->
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" name="gender" id="gender" value="Male" checked>Male&nbsp;<input
+                                type="radio" name="gender" id="gender" value="Femamle">Female &nbsp;<input type="radio"
+                                name="gender" id="gender" value="Other">Other
+                        </div><br>
+                        <div class="col-sm-6">
+                            <label for="adrs">Address</label><br>
+                            <textarea name="adrs" id="adrs"></textarea>
+                        </div><br>
+
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="counrty">Choos a Country</label>&nbsp;
+                            <select name="country" id="country" value="">
+                                <option aria-placeholder="Select Countrys"></option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- Dropdown List -->
+                            <label for="states">Choos a States</label>&nbsp;
+                            <select name="states" id="states">
+                            </select>
+                        </div>
+                    </div><br><br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- CheckBox -->
+                            <label for="hobbies">Hobbies</label><br>
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="cricket"
+                                value="Cricket">Cricket &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="football"
+                                value="Football">Football &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="swimming"
+                                value="Swimming">Swimming &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="singing"
+                                value="Singing">Singing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="dancing"
+                                value="Dancing">Dancing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="gamming"
+                                value="Gamming">Gamming &nbsp;
+                        </div>
+                    </div><br>
+                    <div class="row" style="text-align:center;">
+                        <!-- <input value="Submit" class="btn btn-primary" onclick="insert()"> -->
+                        <button type="button" class="btn btn-primary" onclick="insert()">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table id="tbl" border="1px" align="center">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>States</th>
+                <th>Hobbies</th>
+
+
+            </tr>
+        </thead>
+        <tbody id="tbl"></tbody>
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // $(document).ready(
+        //     function () {
+
+        //         $('.validate_fname').on('change', function (event) {
+        //             var rFName = $('#fname').val();
+        //             $(".errorname").remove();
+        //             if (rFName.length == 0) {
+        //                 $('#fname').after('<p class="errorname" style="color:red;">First Name is mandatory.</p>');
+        //             } else {
+        //                 var namreg = /^[a-zA-Z ]*$/;
+        //                 var validName = namreg.test(rFName);
+        //                 if (!validName) {
+        //                     $("#fname").after('<p  class="errorname" style="color:red">Enter Valid First Name</p>');
+        //                 }
+        //             }
+        //         });
+
+        //         $('.validate_lname').on('change', function (event) {
+        //             var rLName = $('#lname').val();
+        //             $(".errorname").remove();
+        //             if (rLName.length == 0) {
+        //                 $('#lname').after('<p class="errorname" style="color:red;">Last Name is mandatory.</p>');
+        //             } else {
+        //                 var namreg = /^[a-zA-Z ]*$/;
+        //                 var validName = namreg.test(rLName);
+        //                 if (!validName) {
+        //                     $("#lname").after('<p  class="errorname" style="color:red">Enter Valid Last Name</p>');
+        //                 }
+        //             }
+        //         });
+
+        //         $('.validate_email').on('change', function (event) {
+        //             var emailId = $('#email');
+        //             var email_regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+        //             $('.valErrReg').remove();
+        //             if (emailId.val() == '') {
+        //                 emailId.after('<p class="valErrReg">Please enter Email.</p>');
+        //                 returnValInner = false;
+        //             } else if (!emailId.val().match(email_regex)) {
+        //                 emailId.after('<p class="valErrReg" style="color:red">Invalid Email address, Please enter valid Email.');
+        //                 returnValInner = false;
+        //             }
+        //         });
+
+        //         $('.validate_mobileno').on('change', function (event) {
+        //             var mobile = $('#mobile').val();
+        //             $(".errorname").remove();
+        //             if (mobile.length == 0) {
+        //                 $('#mobile').after('<p class="errorname" style="color:red;">Please Enter MobileNo.</p>');
+        //             } else if (mobile.length < 10) {
+        //                 $('#mobile').after('<p class="errorname" style="color:red;">Please Enter Valid MobileNo.</p>');
+        //             }
+
+        //         });
+
+
+
+        //     });
+        var countryList = {
+
+            India: ['Gujrat', 'Panjab', 'Delhi', 'Maharashtra', 'Rajashthan'],
+            Austrailya: ['Aus', 'New South Wales', 'Queensland', 'South Australia', 'Tasmania'],
+            UAE: ['Dubai', 'Abu Dhabi', 'Sharjah'],
+            UK: ['Scotland', 'Northern Ireland', 'Wales', 'Northern Ireland']
+        }
+
+        country = document.getElementById("country"); //parent select element
+        states = document.getElementById("states"); //child select element
+
+        for (key in countryList) { //populate the parent select element with array key
+            country.innerHTML = country.innerHTML + '<option>' + key + '</option>';
+        }
+
+        country.addEventListener('change', function populate_child(e) {
+            states.innerHTML = '';
+            itm = e.target.value;
+            if (itm in countryList) {
+                for (i = 0; i < countryList[itm].length; i++) {
+                    states.innerHTML = states.innerHTML + '<option>' + countryList[itm][i] + '</option>';
+                }
+            }
+        });
+
+
+        function insert() {
+            // debugger;
+            // Adding Jquery
+            // $(document).ready(
+            //     function () {
+            // $(document).ready(
+            //     function () {
+
+                    $('.validate_fname').on('change', function (event) {
+                        
+                        var rFName = $('#fname').val();
+                        $(".errorname").remove();
+                        if (rFName.length == 0) {
+                            $('#fname').after('<p class="errorname" style="color:red;">First Name is mandatory.</p>');
+                        } else {
+                            var namreg = /^[a-zA-Z ]*$/;
+                            var validName = namreg.test(rFName);
+                            if (!validName) {
+                                $("#fname").after('<p  class="errorname" style="color:red">Enter Valid First Name</p>');
+                            }
+                        }
+                    });
+
+                    $('.validate_lname').on('change', function (event) {
+                        var rLName = $('#lname').val();
+                        $(".errorname").remove();
+                        if (rLName.length == 0) {
+                            $('#lname').after('<p class="errorname" style="color:red;">Last Name is mandatory.</p>');
+                        } else {
+                            var namreg = /^[a-zA-Z ]*$/;
+                            var validName = namreg.test(rLName);
+                            if (!validName) {
+                                $("#lname").after('<p  class="errorname" style="color:red">Enter Valid Last Name</p>');
+                            }
+                        }
+                    });
+
+                    $('.validate_email').on('change', function (event) {
+                        var emailId = $('#email');
+                        var email_regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+                        $('.valErrReg').remove();
+                        if (emailId.val() == '') {
+                            emailId.after('<p class="valErrReg">Please enter Email.</p>');
+                            returnValInner = false;
+                        } else if (!emailId.val().match(email_regex)) {
+                            emailId.after('<p class="valErrReg" style="color:red">Invalid Email address, Please enter valid Email.');
+                            returnValInner = false;
+                        }
+                    });
+
+                    $('.validate_mobileno').on('change', function (event) {
+                        var mobile = $('#mobile').val();
+                        var mobile_regex = /^[+0-9]{10,13}$/;
+                        $(".errorname").remove();
+                        if (mobile.length == 0) {
+                            $('#mobile').after('<p class="errorname" style="color:red;">Please Enter MobileNo.</p>');
+                        } else if (!mobile.match(mobile_regex)) {
+                            $('#mobile').after('<p class="errorname" style="color:red;">Please Enter Valid MobileNo.</p>');
+                        }
+                        else if (mobile.length < 10) {
+                            $('#mobile').after('<p class="errorname" style="color:red;">Please Enter Valid MobileNo.</p>');
+                        }
+
+                    });
+
+
+
+                // });
+
+
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var adrs = document.getElementById('adrs').value;
+            var country = document.getElementById('country').value;
+            var states = document.getElementById('states').value;
+            //var hobbies1 = document.getElementById('hobbies1').value;
+            var hobbies = "";
+            var checkboxes = document.getElementsByName('hobbies');
+            var vals = "";
+            for (var i = 0, n = checkboxes.length; i < n; i++) {
+                if (checkboxes[i].checked) {
+                    vals += "," + checkboxes[i].value;
+                }
+            }
+            if (vals) vals = vals.substring(1);
+
+            hobbies = vals;
+            console.log('value of hobbies', hobbies);
+
+            // console.log("this from hobbies :: " + hobbies);
+
+            var table = `<tr>
+                     <td>${fname}</td>
+                    <td>${lname}</td>
+                    <td>${email}</td>
+                    <td>${mobile}</td>
+                    <td>${gender}</td>
+                    <td>${adrs}</td>
+                    <td>${country}</td>
+                    <td>${states}</td>
+                    <td>${hobbies}</td>          
+            
+                    </tr>`;
+            document.getElementById('tbl').innerHTML += table;
+
+            // // Locat Storage
+            // let user_records = new Array();
+            // user_records = JSON.parse(localStorage.getItem("users"))
+            // user_records.push({
+            //     "fname": fname,
+            //     "lname": lname,
+            //     "email": email,
+            //     "mobile": mobile,
+            //     "gender": gender,
+            //     "adrs": adrs,
+            //     "country": country,
+            //     "states": states,
+            //     "hobbies1": hobbies1
+            // })
+            // // console.log(infoStorage);
+            // localStorage.setItem('users', JSON.stringify(user_records));
+
+            clearForm();
+        }
+
+        function clearForm() {
+            // debugger;
+            document.getElementById('fname').value = " ";
+            document.getElementById('lname').value = " ";
+            document.getElementById('email').value = " ";
+            document.getElementById('mobile').value = " ";
+            document.getElementById('gender').value = " ";
+            document.getElementById('adrs').value = " ";
+            document.getElementById('country').value = " ";
+            document.getElementById('states').value = " ";
+            document.getElementsByName('hobbies').value = " ";
+
+        }
+
+            // });
+    </script>
+
+</body>
+
+</html>

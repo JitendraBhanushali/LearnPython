@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ex</title>
+</head>
+<style>
+    button{
+        color: white;
+        background-color: black;
+        border: 2px solid yellow;
+        border-radius: 8px;
+        padding: 10px 14px;
+        display: inline-block;
+        text-align: center;
+        cursor: pointer;
+    
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>This is a Hide and Show button</h1>
+
+        <p id = 'para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis earum eveniet repudiandae, amet voluptatem doloribus. Expedita quia unde quo labore error quaerat fuga cumque exercitationem nam dolorem qui ipsum illo blanditiis voluptatibus, numquam ratione ab adipisci distinctio tenetur eius quibusdam minus vel facere! Dolor, eos voluptatum fuga obcaecati cum tenetur cupiditate unde quos modi, rerum quidem. Officiis non delectus dignissimos temporibus! Voluptatum consequuntur cumque perferendis corrupti voluptatem ipsam aspernatur unde architecto ut nam ratione nisi porro, reprehenderit repellendus? Ut commodi corrupti id exercitationem excepturi obcaecati nulla atque culpa facere doloribus distinctio perspiciatis provident incidunt, in nesciunt deserunt consectetur! Temporibus delectus, minima porro, rem, voluptates suscipit eveniet tempore amet provident animi saepe laboriosam pariatur necessitatibus inventore illum facilis reprehenderit earum libero labore. Rerum dolore adipisci culpa facilis. Enim soluta quos voluptatem dignissimos possimus sint animi, sapiente earum voluptas in est non eius, corrupti cumque nobis nesciunt nemo commodi temporibus placeat qui illum accusamus! Quasi sunt odit explicabo ipsa reprehenderit, magni id deleniti velit quis vitae quae provident ut, voluptate dolorem doloremque sapiente autem vero facilis necessitatibus sequi pariatur quidem? Cum ad repellat quia aspernatur fugiat veritatis quos veniam nesciunt, atque dolor dolore reiciendis quasi ipsa dolorem. Culpa earum ad ipsum, corporis dolore aperiam eaque aliquid qui ipsa corrupti eum assumenda mollitia labore consequatur amet totam fuga libero, debitis aspernatur neque quos esse. Saepe magni dolor nesciunt voluptate quasi dignissimos, nobis, molestias modi repellendus quibusdam perferendis.</p>
+    </div>
+    <button id = 'btnhide' onclick="hide()">Hide</button>
+    <button id = 'btnshow' onclick="show()">Show</button>
+
+
+    <script>
+
+        // Creating alert to inside para and outside para
+        // let para = document.getElementById('para')
+        // para.addEventListener('mouseover', function run(){
+        //     alert('Mouse inside a Pera')
+        //         console.log('Mouse inside a Pera')
+        // })
+        // para.addEventListener('mouseout', function run(){
+        //     alert('Mouse outside a Pera')
+        //     console.log('Mouse outside a Pera')
+
+        // })
+
+
+        function hide(){
+
+            // ---------- Hide() -------------
+            // let btn = document.getElementById('btn')
+            // let para = document.getElementById('para')
+            para.style.display = 'none';
+        }
+        function show(){
+            // ---------- Show() --------------
+            // let btn = document.getElementById('btn')
+            // let para = document.getElementById('para')
+            para.style.display = 'block';
+        }
+    </script>
+
+
+</body>
+</html>

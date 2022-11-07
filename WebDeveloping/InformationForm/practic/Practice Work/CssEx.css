@@ -1,0 +1,22 @@
+
+/* 
+Types of CSS:-
+
+1. Inline Css
+2. Internal Css
+3. External Css
+
+This file is External Css  */
+
+/* This is a External Css File */
+
+p{
+    color: black;
+    background-color: yellow;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    color: white;
+    background-color:black;
+}

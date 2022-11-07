@@ -1,0 +1,55 @@
+h1{
+    background-color: bisque;
+    color: brown;
+    text-align: center;
+    font-size: 60px;
+}
+.container{
+    background-color: #50ffc7;
+    color: brown;
+    text-align: center;
+
+}
+#display{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: auto;
+}
+
+*{
+    margin: auto;
+    padding: auto;
+
+}
+/* .container{
+    background-color: antiquewhite;
+    padding: 20px;
+    display: block;
+    margin: 0%;
+    border-radius: 5px;
+}
+.container input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid red;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    resize: vertical;
+    border-radius: 10px;
+}
+#button{
+    background-color:burlywood;
+    cursor: pointer;
+}
+table th{
+    border: 2px solid brown;
+    height: 50px;
+    
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+} */

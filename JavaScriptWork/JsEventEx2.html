@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Ex2</title>
+</head>
+<body>
+    <h1>This is a hide and show function on menu</h1>
+    <div class="container">
+        <ul id="usr">
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+            <li>Email</li>
+        </ul>
+    </div>
+    <button id="btn" onclick="hide()"> Hide </button>
+    <button id="btn1" onclick="show()"> show </button>
+
+
+    <script>
+        // Hide Function
+        function hide(){
+            let btn = document.getElementById('btn')
+            let usr = document.getElementById('usr')
+            usr.style.display = 'none'
+        }
+        // Show function
+        function show(){
+            let btn = document.getElementById('btn')
+            let usr = document.getElementById('usr')
+            usr.style.display = 'block'
+        }
+    </script>
+</body>
+
+</html>

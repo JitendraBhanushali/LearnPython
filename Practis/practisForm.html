@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practisForm</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 class="text-center text-bg-info ">Registration <small>Form</small></h1>
+    <div class="container mt-3">
+        <div class="row justify-centent-center">
+            <form action="#" autocomplete="off" name="reg_form">
+                <div class="col-sm-12">
+                    <div class="row">
+
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="fname" class="form-name">Name</label><br>
+                            <input type="text" class="formcontrol" id="fname" placeholder="Enter First Name"
+                                maxlength="101" required>
+                            <p id="fmesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="lname" class="form-name">Last Name</label><br>
+                            <input type="text" class="formcontrol" id="lname" placeholder="Enter Last Name"
+                                maxlength="81" required>
+                            <p id="lmesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="email" class="form-email">Email</label><br>
+                            <input type="email" class="formcontrol" id="email" placeholder="Enter Email" required>
+                            <p id="emesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="mobile" class="form-number">Mobile No</label><br>
+                            <input type="text" class="formcontrol" id="mobile" placeholder="Enter Mobile Number"
+                                maxlength="13" required>
+                            <p id="mobmesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="gender" class="form-radio">Gender</label><br>
+                            <input type="radio" class="formcontrol" name="gender" value="Male">Male
+                            <input type="radio" class="formcontrol" name="gender" value="Female">Female
+                            <input type="radio" class="formcontrol" name="gender" value="Other">Other
+                            <p id="genmesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="adrs">Address</label><br>
+                            <textarea name="adrs" id="adrs"></textarea>
+                            <p id="addmesaage"></p>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="country">Country</label><br>
+                            <select name="country" id="country">
+                                <option value="Select Defualt">Select Defualt</option>
+                                <option value="India">India</option>
+                                <option value="America">Amarica</option>
+                                <option value="Londan">London</option>
+
+                            </select>
+                            <span id="coumessage"></span>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="states">States</label><br>
+                            <select name="states" id="states">
+                                <option value="Gujrat">Gujrat</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="UP">UP</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mb-3 mt-3">
+                            <label for="hobbies">Hobbies</label><br>
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="cricket"
+                                value="Cricket">Cricket &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="football"
+                                value="Football">Football &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="swimming"
+                                value="Swimming">Swimming &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="singing"
+                                value="Singing">Singing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="dancing"
+                                value="Dancing">Dancing &nbsp;
+                            <input type="checkbox" name="hobbies" class=".hobbie_field" id="gamming"
+                                value="Gamming">Gamming &nbsp;
+                            <p id="checkmesaage"></p>
+                        </div>
+                        <div class="row justify-centent-center formcontrol">
+                            <button type="submit" value="Submit" id="sbt" onclick="return insert()">Submit</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row justify-centent-center">
+            <table id="tbl" border="1px" align="center" style="padding-top: 10px;">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Country</th>
+                        <th>States</th>
+                        <th>Hobbies</th>
+                        <th>Action</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="tbl"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("sbt").addEventListener("click", function (event) {
+            event.preventDefault()
+        });
+        function insert() {
+            //  debugger;
+            var alpha_check = /^[A-za-z]+$/;
+            var num_check = /^[+1-9]+$/;
+
+
+            // let fname, lname, email, mobile, gender, adrs, country, states, hobbies;
+
+            // Variable declaration and Condition check
+            var fname = document.getElementById("fname").value;
+            if (fname == "") {
+                document.getElementById("fmesaage").innerHTML = "Enter User name"
+                return false;
+            }
+            if (fname < 100) {
+                document.getElementById("fmesaage").innerHTML = "User Name Less than 100Char"
+                return false;
+            }
+            if (fname.match(alpha_check))
+                true;
+            else {
+                document.getElementById("fmesaage").innerHTML = "Enter User name must be Alphabet"
+                return false;
+            }
+
+            // Variable declaration and Condition check
+
+            var lname = document.getElementById("lname").value;
+            if (lname == "") {
+                document.getElementById("lmesaage").innerHTML = "Enter Last name"
+                return false;
+            }
+            if (lname < 80) {
+                document.getElementById("lmesaage").innerHTML = "Last name Less than 80Char"
+                return false;
+            }
+            if (lname.match(alpha_check))
+                true;
+            else {
+                document.getElementById("lmesaage").innerHTML = "Last name must be Alphabet"
+                return false;
+            }
+
+            // Condition check
+            var email = document.getElementById("email").value;
+            if (email.indexOf('@') <= 0) {
+                document.getElementById("emesaage").innerHTML = "Enter Valid Email"
+                return false;
+            }
+            if ((email.charAt(email.length - 4) != '.') && (email.charAt(email.length - 3) != '.')) {
+                document.getElementById("emesaage").innerHTML = "Enter Valid Email"
+                return false;
+            }
+            // Condition check
+            var mobile = document.getElementById("mobile").value;
+            if (mobile == "") {
+                document.getElementById("mobmesaage").innerHTML = "Enter Mobile Number"
+                return false;
+            }
+            if (isNaN(mobile)) {
+                document.getElementById("mobmesaage").innerHTML = "Enter Only Number"
+                return false;
+            }
+            if ((mobile.length <= 13) && (mobile.match(num_check))) {
+                true;
+
+            }
+            // if (mobile.length == 10){
+            //     true;
+            // }
+            // else
+            //     document.getElementById("mobmesaage").innerHTML = "Number Mustbe 10char"
+            //     return false;
+
+
+            // var gender = document.querySelector('input[name="gender"]:checked').value;
+            var gender = document.getElementsByName("gender");
+            for (i = 0; i < gender.length; i++) {
+                if (gender[i].checked == true)
+                    return true;
+            }
+            document.getElementById("genmesaage").innerHTML = "Select Gender"
+            return flase;
+
+            var adrs = document.getElementById("adrs");
+            if (adrs == "") {
+                document.getElementById("addmesaage").innerHTML = "Enter Address"
+                return false;
+            }
+            var country = document.getElementById("country").value;
+            if (country == "Select Defualt") {
+                document.getElementById("coumessage").innerHTML = "Select Country"
+                return false;
+            }
+            var states = document.getElementById("states").value;
+            var hobbies = document.getElementsByName("hobbies");
+            for (i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked == true)
+                    return true;
+            }
+            document.getElementById("checkmesaage").innerHTML = "Select Checkbox"
+            return flase;
+
+            console.log(fname, lname, email, gender, adrs, country, states, hobbies);
+
+            console.log("You are in a form");
+
+            var user_records = new Array();
+            user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+            if (user_records.some((v) => { return v.email == email })) {
+                alert("Duplicate Data")
+            }
+            else {
+                user_records.push({
+                    "fname": fname,
+                    "lname": lname,
+                    "email": email,
+                    "mobule": mobile,
+                    "gender": gender,
+                    "adrs": adrs,
+                    "country": country,
+                    "states": states,
+                    "hobbies": hobbies
+                });
+                localStorage.setItem("users", JSON.stringify(user_records));
+            }
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

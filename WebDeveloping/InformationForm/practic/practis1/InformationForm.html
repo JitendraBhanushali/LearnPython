@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Form</title>
+    <style>
+        .container{
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <fieldset style="width: 50%;margin:0 auto; font-size: 35px;" >
+        <legend>Information Form</legend>
+        First Name: <br>
+        <input type="text" id="fname" style="text-size-adjust: 20px;"><br>
+        Last Name: <br>
+        <input type="text" id="lname"><br>
+        Email: <br>
+        <input type="email" id="email"><br>
+        Mobile: <br>
+        <input type="number" id="mobile"><br>
+        Address: <br>
+        <textarea name="" id="adrs" rows="5"></textarea><br>
+        <button type="button" onclick="insert()">Submit</button>
+    </fieldset>
+
+    <fieldset style="width: 30%;margin:0 auto;">
+        <legend>Information</legend>
+        <table style="width:100%;" border="1px;">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="tbl"></tbody>
+        </table>
+    </fieldset>
+</div>
+<script>
+    function insert(){
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var email = document.getElementById('email').value;
+        var mobile = document.getElementById('mobile').value;
+        var adrs = document.getElementById('adrs').value;
+
+        var table = `<tr>
+                        <td>${fname}</td>
+                        <td>${lname}</td>
+                        <td>${email}</td>
+                        <td>${mobile}</td>
+                        <td>${adrs}</td>
+                    </tr>`;   
+        document.getElementById('tbl').innerHTML += table;
+
+        clearForm();
+    }
+
+    function clearForm(){
+        document.getElementById('fname').value = "";
+        document.getElementById('lname').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('mobile').value = "";
+        document.getElementById('adrs').value = "";
+    }
+</script>
+
+    
+</body>
+</html>
