@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_dairy">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <center>
+                            <h1>This is a Report of Seller</h1>
+                        </center>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-bordered" style="table-layout: fixed" id="seller_report_table">
+                                    <thead style="display: table-row-group">
+                                        <tr>
+                                            <th class="text-center" style="width: 20%" scope="col">Date</th>
+                                            <th class="text-center" style="width: 20%" scope="col">Seller Name</th>
+                                            <th class="text-center" style="width: 20%" scope="col">Milk Type</th>
+                                            <th class="text-center" style="width: 20%" scope="col">Liters</th>
+                                            <th class="text-center" style="width: 20%" scope="col">Price</th>
+                                            <th class="text-center" style="width: 20%" scope="col">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="docs" t-as="doc">
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <t t-esc="doc['date']"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <span t-field="doc.seller_name.name"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="doc['milk_type']"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="doc['liters']"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="doc['price']"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="doc['total']"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+<!--    <template id="report_seller_list">-->
+<!--        <t t-call="web.html_container">-->
+<!--            <t t-foreach="seller_name" t-as="name">-->
+<!--                <t t-call="Dairy.report_dairy" t-lang="doc.seller_name.name"/>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </template>-->
+</odoo>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_dairy_root"
+              name="Dairy"
+              sequence="0"
+    />
+    <menuitem id="dairy_seller_buyer_root"
+              name="Seller / Buyer"
+              parent="menu_dairy_root"
+              sequence="0"
+    />
+    <menuitem id="dairy_seller_root"
+              name="Seller"
+              parent="dairy_seller_buyer_root"
+              sequence="0"
+    />
+<!--    <menuitem id="dairy_buyer_root"-->
+<!--              name="Buyer"-->
+<!--              parent="dairy_seller_buyer_root"-->
+<!--              sequence="1"-->
+<!--    />-->
+<!--    <menuitem id="dairy_Customer_root"-->
+<!--              name="Customer"-->
+<!--              parent="dairy_seller_buyer_root"-->
+<!--              sequence="2"-->
+<!--    />-->
+<!--    -->
+
+</odoo>

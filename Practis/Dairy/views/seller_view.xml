@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_dairy_seller" model="ir.actions.act_window">
+            <field name="name">Seller</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">inline</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="dairy_seller_menu"
+                  name="Seller"
+                  parent="dairy_seller_root"
+                  sequence="0"
+                  action="action_dairy_seller"
+        />
+    </data>
+</odoo>
