@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--        Action-->
+        <record id="action_dairy_buyer" model="ir.actions.act_window">
+            <field name="name">Buyers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dairy.seller</field>
+            <field name="view_mode">tree,calendar,kanban,pivot,graph,search,form</field>
+<!--            Context default value is default_filed_name-->
+            <field name="context">{'default_customer_type':'buyer'}</field>
+
+<!--            Domain this is a filter the menu -->
+            <field name="domain">[('customer_type', '=', 'buyer')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Buyer ...!
+                </p>
+            </field>
+        </record>
+
+        <!--        Menu-->
+        <menuitem id="menu_dairy_buyer"
+                  name="Buyers"
+                  action="action_dairy_buyer"
+                  parent="menu_dairy_seller_and_buyer_root"
+                  sequence="1"
+        />
+    </data>
+</odoo>

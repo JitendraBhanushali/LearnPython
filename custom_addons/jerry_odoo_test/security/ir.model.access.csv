@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jerry_odoo_test_jerry_odoo_test,jerry_odoo_test.jerry_odoo_test,model_jerry_odoo_test_jerry_odoo_test,base.group_user,1,1,1,1

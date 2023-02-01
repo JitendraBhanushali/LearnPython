@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_dairy" model="ir.actions.report">
+        <field name="name">Customer Report</field>
+        <field name="model">dairy.seller</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dairy.report_customer_doc</field>
+        <field name="report_file">dairy.report_customer_doc</field>
+        <field name="binding_model_id" ref="model_dairy_seller"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_for_admin_dairy" model="ir.actions.report">
+        <field name="name">Customer weekly Report for admin</field>
+        <field name="model">dairy.seller</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">dairy.report_customer_doc_for_admin</field>
+        <field name="report_file">dairy.report_customer_doc_for_admin</field>
+        <field name="binding_model_id" ref="model_dairy_seller"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

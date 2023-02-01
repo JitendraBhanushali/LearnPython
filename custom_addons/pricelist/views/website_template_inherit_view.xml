@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <template id="pricelists_list_extend" inherit_id="website_sale.pricelist_list"-->
+<!--              name="Pricelists Dropdown Inherit">-->
+<!--        <xpath expr="//div[hasclass('dropdown-menu')]" position="replace">-->
+<!--            <t t-set="curr_pl" t-value="website.partner_id.property_product_pricelist" />-->
+
+<!--            <a role="button" href="#" t-attf-class="dropdown-toggle btn btn-{{navClass}}" data-bs-toggle="dropdown">-->
+<!--                <t t-esc="curr_pl and curr_pl.name or ' - '" />-->
+<!--            </a>-->
+
+
+<!--&lt;!&ndash;            <t t-set="curr_pl" t-value="website.partner_id.property_product_pricelist" />&ndash;&gt;-->
+<!--&lt;!&ndash;            &ndash;&gt;-->
+<!--&lt;!&ndash;            <a role="button" href="#" t-attf-class="dropdown-toggle btn btn-{{navClass}}" data-bs-toggle="dropdown">&ndash;&gt;-->
+<!--&lt;!&ndash;                <t t-esc="curr_pl and curr_pl.name or ' - '" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </a>&ndash;&gt;-->
+
+
+
+<!--        </xpath>-->
+<!--    </template>-->
+
+</odoo>
+

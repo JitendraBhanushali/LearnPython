@@ -1,0 +1,39 @@
+
+
+git branch change:
+	- git checkout.	all update is remove
+	- git checkout 16.0
+	- git checkout 15.0
+	
+git branch: check the git branch
+    - git branch
+
+git pull: get new update of repository
+    - git pull
+
+git clone: clone he repository
+	- git clone https link copy
+	
+git:
+ - git status
+ - git add --a
+ - git commit -m 'message'
+ - git push -u origine master/main
+ 
+
+
+1. Dairy Model:-
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d dairy --db-filter=dairy -u dairy
+
+2. Receipt Date
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d receipt_date --db-filter=receipt_date -u receipt_date
+
+3. Hospital
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d hospital --db-filter=hospital -u hospital
+
+4. create_po
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d create_po --db-filter=create_po -u create_po
+
+5. website_sale
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d dairy --db-filter=dairy -u website_sale
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.dairy.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Dairy" id="dairy" string="Dairy" data-key="dairy">
+                        <h2>Dairy Management</h2>
+                        <div class="row mt16 o_settings_container" id="dairy_setting">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Dairy Seller Details</span>
+                                    <div class="text-muted content-group mt16">
+                                        <span>Seller Limit:</span>
+                                        <field name="seller_limit" class="text-center"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="dairy_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="context">{'module' : 'dairy', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="dairy_config_settings_menu" name="Settings"
+            parent="dairy.menu_dairy_configuration_root" sequence="0" action="dairy_config_settings_action"
+            groups="base.group_system"/>
+    </data>
+</odoo>

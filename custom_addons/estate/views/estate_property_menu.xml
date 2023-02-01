@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_estate_property_root"
+              name="Estate"
+              sequence="0"
+    />
+    <menuitem id="menu_estate_property_advertisements_root"
+              name="Advertiesments"
+              parent="menu_estate_property_root"
+              sequence="0"
+    />
+    <menuitem id="menu_estate_settings_root"
+              name="Settings"
+              parent="menu_estate_property_root"
+              sequence="1"
+    />
+</odoo>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    Tree View-->
+        <record id="view_dairy_seller_tree" model="ir.ui.view">
+            <field name="name">dairy.seller.tree</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="customer_type == 'buyer'" decoration-success="customer_type == 'seller'"
+                      sample="1" multi_edit="1">
+                    <field name="name" string="Order Sequence"/>
+                    <field name="customer_id" string="Name"/>
+                    <field name="email" optional="show"/>
+                    <field name="customer_type" string="Customer" widget="badge"
+                           decoration-info="customer_type == 'buyer'" decoration-success="customer_type == 'seller'"/>
+                    <field name="milk_taker" string="Milk Taker" widget="many2one_avatar_user"/>
+                    <field name="date"/>
+                    <field name="activity_ids" widget="list_activity" optional="show"/>
+                    <field name="milkType" string="Milk Type"/>
+                    <field name="liters" string="Liters" sum="liters"/>
+                    <field name="price" string="Price"/>
+                    <field name="total" sum="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--    Calendar View-->
+        <record id="view_dairy_seller_calender" model="ir.ui.view">
+            <field name="name">dairy.seller.calender</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <calendar string="Dairy" date_start="date" quick_add="False" color="customer_type">
+                    <field name="customer_id"/>
+                    <field name="customer_type"/>
+                    <field name="date"/>
+                    <field name="milkType" string="Milk Type"/>
+                    <field name="liters" string="Liters"/>
+                    <field name="price" string="Price"/>
+                    <field name="total"/>
+
+                </calendar>
+            </field>
+        </record>
+
+        <!--    Graph View-->
+        <record id="view_dairy_seller_graph" model="ir.ui.view">
+            <field name="name">dairy.seller.graph</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <graph string="Order Details" sample="1" type="pie">
+                    <field name="customer_id"/>
+                    <field name="total" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <!--        Pivot View-->
+        <record id="view_dairy_seller_pivot" model="ir.ui.view">
+            <field name="name">dairy.seller.pivot</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <pivot string="Sales Orders" sample="1">
+                    <field name="customer_type" string="Customer"/>
+                    <field name="milkType" string="Milk Type"/>
+                    <field name="milk_taker" string="Milk Taker"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!--        Kanban View-->
+        <record id="view_dairy_seller_kanban" model="ir.ui.view">
+            <field name="name">dairy.seller.kanban</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <kanban string="Seller Details" sample="1">
+                    <field name="customer_id" string="Name"/>
+                    <field name="customer_type" string="Customer"/>
+                    <field name="milk_taker" string="Milk Taker" widget="many2one_avatar_user"/>
+                    <field name="date"/>
+                    <field name="activity_ids" widget="list_activity" optional="show"/>
+                    <field name="milkType" string="Milk Type"/>
+                    <field name="liters" string="Liters" sum="liters"/>
+                    <field name="price" string="Price"/>
+                    <field name="total" sum="total"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div>
+                                    <strong>Name:</strong>
+                                    <field name="customer_id"/>
+                                </div>
+                                <div>
+                                    <strong>Customer:</strong>
+                                    <field name="customer_type" string="Customer"/>
+                                    <br/>
+
+                                    <strong>Milk Taker:</strong>
+                                    <field name="milk_taker"/>
+                                    <br/>
+
+                                    <strong>Date:</strong>
+                                    <field name="date"/>
+                                    <br/>
+
+                                    <strong>Milk Type:</strong>
+                                    <field name="milkType" string="Milk Type"/>
+                                    <br/>
+
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--    Form View Naming Like "view_ModelName_form" -->
+        <record id="view_dairy_seller_form" model="ir.ui.view">
+            <field name="name">dairy.seller.form</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_print_customer_report" string="Print Report" type="object"
+                                class="btn-primary" help="Print Report" data-hotkey="p"/>
+                        <button name="action_send_email_customer_report" string="Send Email" type="object"
+                                class="btn-primary" help="Send Email" data-hotkey="s"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" help="Order Sequence" readonly="1"/>
+                            </h2>
+                            <h1>
+                                <label for="customer_id" string="Name"/>
+                                <field name="customer_id" help="Enter Your Name" default_focus="1"/>
+                            </h1>
+                        </div>
+                        <separator/>
+                        <group>
+                            <group>
+                                <field name="email"/>
+                                <field name="date" help="Current Date"/>
+                                <field name="customer_type" string="Customer" help="Select Customer"/>
+                                <field name="milk_taker" string="Milk Taker" widget="many2one_avatar_user"
+                                       help="Select Milk Taker"/>
+                            </group>
+                            <group>
+                                <field name="milkType" help="Select Milk Type"/>
+                                <field name="liters" help="Enter Liters"/>
+                                <field name="price" help="Enter Milk Price"/>
+                                <field name="total"/>
+                                <field name="active" invisible="1"/>
+                            </group>
+                            <group>
+                                <!--                                Creating object button to save record and show a rainbow effect -->
+                                <button name="action_save_record" string="Sava Record" type="object"
+                                        class="oe_highlight" confirm="Are you sure to save record?" help="Save Record"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <!--                    Chatter-->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!--    Search View-->
+        <record id="view_dairy_seller_search" model="ir.ui.view">
+            <field name="name">dairy.seller.search</field>
+            <field name="model">dairy.seller</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="customer_id"
+                           filter_domain="['|','|','|',('customer_id','ilike',self),('customer_type','ilike',self),('milkType','ilike',self),('liters','ilike',self)]"/>
+                    <!--                    <field name="seller_last_name" string="Last Name"/>-->
+                    <field name="customer_type"/>
+                    <field name="milkType"/>
+                    <field name="liters" sum="liters"/>
+                    <filter name="filter_customer_type_seller" string="Seller"
+                            domain="[('customer_type', '=', 'seller')]"/>
+                    <filter name="filter_customer_type_buyer" string="Buyer"
+                            domain="[('customer_type', '=', 'buyer')]"/>
+                    <filter name="filter_cow" string="Cow" domain="[('milkType', '=', 'cow')]"/>
+                    <filter name="filter_buffalo" string="Buffalo" domain="[('milkType', '=', 'buffalo')]"/>
+                    <filter name="filter_goat" string="Goat" domain="[('milkType', '=', 'goat')]"/>
+                    <separator/>
+                    <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_milkType" string="Milk Type" context="{'group_by':'milkType'}"/>
+                        <filter name="customer_type" string="Customer Type" domain="[]" context="{'group_by': 'customer_type'}"/>
+                        <filter name="group_by_date" string="Order Date" context="{'group_by':'date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <!--        Action-->
+        <record id="action_dairy_seller" model="ir.actions.act_window">
+            <field name="name">Sellers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">dairy.seller</field>
+            <field name="view_mode">tree,calendar,kanban,pivot,graph,search,form</field>
+            <!--            Context search default context like search_default_filter_name-->
+            <field name="context">{'search_default_filter_customer_type_seller': 1}</field>
+
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first seller ...!
+                </p>
+            </field>
+        </record>
+
+        <!--        Menu-->
+        <menuitem id="menu_dairy_seller"
+                  name="Sellers"
+                  action="action_dairy_seller"
+                  parent="menu_dairy_seller_and_buyer_root"
+                  sequence="0"
+        />
+    </data>
+</odoo>

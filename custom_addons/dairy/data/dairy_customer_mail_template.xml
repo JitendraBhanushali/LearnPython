@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!-- Mail template are declared in a NOUPDATE block
+         so users can freely customize/delete them -->
+    <data noupdate="1">
+        <!--Email template -->
+        <record id="dairy_customer_email_template" model="mail.template">
+            <field name="name">Customer Report: Send by email</field>
+            <field name="model_id" ref="dairy.model_dairy_seller"/>
+            <field name="email_from">{{ (user.email) }}</field>
+            <field name="email_to">{{ object.customer_id.email }}</field>
+            <field name="subject">Customer Report</field>
+            <field name="description">Sent to customers with their invoices in attachment</field>
+
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <span>Hello,</span>
+                    <br/>
+                    <br/>
+                    <span>Dear
+                        <t t-esc="object.customer_id.name"/>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>Here is your Customer Report</p>
+                    <br/>
+                    <br/>
+                    <span>Creating Date:
+                        <t t-esc="object.date"/>
+                    </span>
+                    <br/>
+                    <span>Customer Type:
+                        <t t-esc="object.customer_type"/>
+                    </span>
+                    <br/>
+                    <span>Milk Type:
+                        <t t-esc="object.milkType"/>
+                    </span>
+                    <br/>
+                    <br/>
+                    <p>If you have any queries feel free to ask.</p>
+                    <br/>
+                    <br/>
+                    <p>Thanks :)</p>
+                </div>
+            </field>
+
+            <field name="report_template" ref="action_report_dairy"/>
+            <field name="report_name">Customer Report_{{ (object.customer_id.name) }}</field>
+<!--            <field name="lang">{{ object.customer_id.lang }}</field>-->
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    Tree View-->
+        <record id="view_estate_properties_tree" model="ir.ui.view">
+            <field name="name">estate.property.tree</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <tree sample="1" multi_edit="1">
+                    <field name="name" string="Name"/>
+                    <field name="description" string="Description"/>
+                    <field name="date_availability" string="Date"/>
+                    <field name="bedrooms" string="Number of Bedrooms"/>
+                    <field name="living_area" string="Living Area"/>
+                    <field name="garage" string="Garage"/>
+                    <field name="garden" string="Garden"/>
+                    <field name="garden_area" string="Garden Area"/>
+                    <field name="garden_orientation" string="Garden Location"/>
+                    <field name="expected_price" string="Expected Price"/>
+                    <field name="selling_price" string="Selling Price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--    Form View Naming Like "view_ModelName_form" -->
+        <record id="view_estate_properties_form" model="ir.ui.view">
+            <field name="name">estate.property.form</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box">
+
+                        </div>
+                        <group>
+                            <group>
+                                <field name="postcode"/>
+                                <field name="date_availability"/>
+                            </group>
+                            <group>
+                                <field name="expected_price"/>
+                                <field name="selling_price"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <field name="name" placeholder="Jitendra"/>
+                                    <field name="description"/>
+                                    <field name="bedrooms"/>
+                                    <field name="garage"/>
+                                    <field name="garden"/>
+                                    <field name="garden_area"/>
+                                    <field name="garden_orientation"/>
+                                    <field name="living_area"/>
+                                    <field name="total_area"/>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--    Search View-->
+        <record id="view_estate_properties_search" model="ir.ui.view">
+            <field name="name">estate.property.search</field>
+            <field name="model">estate.property</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"
+                           filter_domain="['|','|','|','|',('name','ilike',self),('bedrooms','ilike',self),('garage','ilike',self),('garden','ilike',self),('state','ilike',self)]"/>
+                    <field name="bedrooms"/>
+                    <field name="garage"/>
+                    <field name="state"/>
+                    <filter name="filter_new" string="New" domain="[('state', '=', 'new')]"/>
+                    <filter name="filter_offer" string="Offer" domain="[('state', '=', 'offer')]"/>
+                    <filter name="filter_received" string="Received" domain="[('state', '=', 'received')]"/>
+                    <filter name="filter_offer_accepted" string="Offer Accepted" domain="[('state', '=', 'offer_accepted')]"/>
+                    <filter name="filter_sold" string="Sold" domain="[('state', '=', 'sold')]"/>
+                    <filter name="filter_canceled" string="Canceled" domain="[('state', '=', 'canceled')]"/>
+                    <separator/>
+                    <field name="garden" sum="garden"/>
+                    <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <!--        Action-->
+        <record id="action_menu_estate_advertisements_properties" model="ir.actions.act_window">
+            <field name="name">Propertys</field>
+            <field name="res_model">estate.property</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Customer ...!
+                </p>
+            </field>
+        </record>
+
+        <!--        Menu-->
+        <menuitem id="menu_estate_advertisements_properties"
+                  name="Propertys"
+                  action="action_menu_estate_advertisements_properties"
+                  parent="menu_estate_property_advertisements_root"
+                  sequence="0"
+        />
+    </data>
+</odoo>

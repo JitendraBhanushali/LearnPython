@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_quotation_send']" position="before">
+                    <button name="action_create_purchase_order" string="Create PO" type="object" data-hotkey="j"
+                            context="{'open_invoices': True}"
+                            attrs="{'invisible': ['|', ('state', '!=', 'sale'), ('po_count', '&gt;',0)]}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_view_invoice']" position="before">
+                    <button name="action_view_po" type="object" class="oe_stat_button" icon="fa-pencil-square-o"
+                            attrs="{'invisible': [('po_count', '=', 0)]}">
+                        <field name="po_count" widget="statinfo" string="Purchase Order"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

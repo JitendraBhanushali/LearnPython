@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+
+{
+    'name': 'Hospital',
+    'version': '1.0.0',
+    'summary': 'First module of Hospital',
+    'sequence': -100,
+    'description': """This is the first modul of Hospital""",
+    'category': '',
+    'author': "Intechual Solutions",
+    'website': '',
+    'images': [],
+    'depends': ['mail', 'product'],
+    'data': [
+        'security/ir.model.access.csv',
+        'data/patient_tag_data.xml',
+        'data/sequence_data.xml',
+        'wizard/cancel_appointment_view.xml',
+        'views/hospital_menu.xml',
+        'views/patient_view.xml',
+        'views/female_patient_view.xml',
+        'views/appoinment_view.xml',
+        'views/patient_tag_view.xml',
+        'views/res_config_settings_views.xml',
+        'views/operation_view.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'assets': {},
+    'license': 'LGPL-3',
+}

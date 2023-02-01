@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_customer_doc_for_admin">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <span>
+                            <strong>Dairy Customer Weekly Report</strong>
+                        </span>
+                        <table class="table table-sm o_main_table" name="dairy">
+                            <thead>
+                                <tr>
+                                    <th name="customer_id" class="text-left">
+                                        <strong>
+                                            <span>Customer Name</span>
+                                        </strong>
+                                    </th>
+                                    <th name="customer_type" class="text-left">
+                                        <span>
+                                            <strong>Customer Type</strong>
+                                        </span>
+                                    </th>
+                                    <th name="date" class="text-left">
+                                        <span>
+                                            <strong>Date</strong>
+                                        </span>
+                                    </th>
+                                    <th name="milkType" class="text-left">
+                                        <span>
+                                            <strong>Milk Type</strong>
+                                        </span>
+                                    </th>
+                                    <th name="liters" class="text-left">
+                                        <span>
+                                            <strong>liters</strong>
+                                        </span>
+                                    </th>
+                                    <th name="price" class="text-left">
+                                        <span>
+                                            <strong>Price</strong>
+                                        </span>
+                                    </th>
+                                    <th name="total" class="text-left">
+                                        <span>
+                                            <strong>Total</strong>
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+<!--                            <t t-if="mail_sent (checked)">-->
+                                <tr>
+                                    <td>
+                                        <span t-field="o.customer_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.customer_type"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.date"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.milkType"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.liters"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.price"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.total"/>
+                                    </td>
+                                </tr>
+<!--                            </t>-->
+
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+
+
+        <!--                            <tr>-->
+        <!--                                <td colspan="5">-->
+        <!--                                    <strong>Total Amount</strong>-->
+        <!--                                </td>-->
+        <!--                                <td>-->
+        <!--                                    <strong>-->
+        <!--                                        <span>$</span>-->
+        <!--                                        <t t-esc="o.total"/>-->
+        <!--                                    </strong>-->
+        <!--                                </td>-->
+        <!--                            </tr>-->

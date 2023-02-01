@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--        Action-->
+        <record id="action_dairy_res_partner" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form,graph,search</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Customer ...!
+                </p>
+            </field>
+        </record>
+
+        <!--        Menu-->
+        <menuitem id="menu_dairy_res_partner"
+                  name="Customers"
+                  action="action_dairy_res_partner"
+                  parent="menu_dairy_seller_and_buyer_root"
+                  sequence="2"
+        />
+
+    </data>
+</odoo>

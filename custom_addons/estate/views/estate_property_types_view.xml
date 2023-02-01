@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--    Tree View-->
+        <record id="view_estate_properties_types_tree" model="ir.ui.view">
+            <field name="name">estate.property.types.tree</field>
+            <field name="model">estate.property.types</field>
+            <field name="arch" type="xml">
+                <tree sample="1" multi_edit="1">
+                   
+                </tree>
+            </field>
+        </record>
+
+        <!--    Form View Naming Like "view_ModelName_form" -->
+        <record id="view_estate_properties_types_form" model="ir.ui.view">
+            <field name="name">estate.property.types.form</field>
+            <field name="model">estate.property.types</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+<!--                        <field name="state" widget="statusbar"/>-->
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box">
+
+                        </div>
+                        <group>
+                            <group>
+                       
+                            </group>
+                            <group>
+                                
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Property Types">
+                                <group>
+                                    <field name="partner_id"/>
+                                    <field name="user_id"/>
+                                    
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--    Search View-->
+        <record id="view_estate_properties_types_search" model="ir.ui.view">
+            <field name="name">estate.property.types.search</field>
+            <field name="model">estate.property.types</field>
+            <field name="arch" type="xml">
+                <search>
+                    
+                </search>
+            </field>
+        </record>
+
+        <!--        Action-->
+        <record id="action_menu_estate_setting_properties_types" model="ir.actions.act_window">
+            <field name="name">Propertys Types</field>
+            <field name="res_model">estate.property.types</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your First Dream Property ...!
+                </p>
+            </field>
+        </record>
+
+        <!--        Menu-->
+        <menuitem id="menu_estate_setting_properties_types"
+                  name="Propertys Types"
+                  action="action_menu_estate_setting_properties_types"
+                  parent="menu_estate_settings_root"
+                  sequence="0"
+        />
+    </data>
+</odoo>

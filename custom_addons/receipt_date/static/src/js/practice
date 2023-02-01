@@ -1,0 +1,68 @@
+main ui
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_my_purchase_order_inherit" inherit_id="purchase.portal_my_purchase_order"
+              name="Purchase Order Portal Inherit Template">
+        <xpath expr="//div[hasclass('o_download_pdf')]" position="inside">
+            <div class="btn-group flex-grow-1 ms-1 mb-1">
+                <a class="o_calendar_btn btn btn-secondary btn-block" t-att-data-po-id="order.id" t-att-data-access="order.access_token" href="#" title="Receipt Date">
+                    <i class="fa fa-calendar"/>
+                    Receipt Date
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
+
+
+
+
+
+Js
+
+odoo.define('is_website_purchase_modified.PurchasePortalSidebarAction', function (require) {
+    'use strict';
+
+    console.log("Receipt date js run");
+    const time = require('web.time');
+    const publicWidget = require('web.public.widget');
+    const core = require('web.core');
+    const QWeb = core.qweb;
+    console.log("New Receipt date js run");
+
+
+    publicWidget.registry.websiteChangeDate = publicWidget.Widget.extend({
+        selector: '.o_portal_purchase_sidebar',
+        events: {
+            'click .o_calendar_btn': '_onClick',
+        },
+        _onClick: function (ev) {
+            console.log($("#raj"));
+            console.log("this", this);
+            console.log("ev", ev);
+            // debugger;
+            var self = this;
+
+            var poId = $(ev.currentTarget).data('po-id');
+            var access_token = $(ev.currentTarget).data('access');
+            var poDate = $(ev.currentTarget).data('po-date');
+
+            this.$createModal = $(QWeb.render(
+                'frontend_po_date_change',
+                {
+                    csrf_token: odoo.csrf_token,
+                    order_id : poId,
+                    receiptDate: poDate,
+                    access_token : access_token,
+
+                }
+            ));
+            this.$createModal.appendTo(this.$el.parentNode);
+
+            this.$createModal.modal('show');
+        },
+    });
+});
