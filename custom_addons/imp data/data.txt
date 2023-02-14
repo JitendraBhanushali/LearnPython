@@ -20,6 +20,12 @@ git:
  - git commit -m 'message'
  - git push -u origine master/main
  
+- pip install jupyter notebook       #Run python code in chrome
+	jupyter notebook
+ 
+ Scaffold Command:
+ ./odoo-bin scaffold "module name" /home/jitendra/Jitendra/custom_addons
+ 
 
 
 1. Dairy Model:-
@@ -36,4 +42,7 @@ git:
 
 5. website_sale
 ./odoo-bin --addons=addons,~/Jitendra/custom_addons -d dairy --db-filter=dairy -u website_sale
+
+6. create_so
+./odoo-bin --addons=addons,~/Jitendra/custom_addons -d create_so --db-filter=create_so -u create_so
 

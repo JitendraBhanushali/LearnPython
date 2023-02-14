@@ -16,9 +16,11 @@ class PurchaseOrder(models.Model):
     def write(self, vals):
         print("This is a vals----", vals)
 
-
         date_planned = vals.get('date_planned')
         print("date_planned", date_planned)
+
+        old_date = self.date_planned
+        print("old_date", old_date)
 
         if date_planned is not None:
             value = datetime.strptime(date_planned, "%Y-%m-%d %H:%M:%S")
@@ -34,8 +36,17 @@ class PurchaseOrder(models.Model):
             update_time = datetime.strftime(new_date, "%Y-%m-%d %H:%M:%S")
             print("update_time", update_time)
 
+            print("self.date_planned", self.date_planned)
+            print("update_time", update_time)
+
+            tz_user = pytz.timezone(self.env.context.get('tz') or self.env.user.tz)
+            print("tz_user", tz_user)
+
+            old_date = pytz.utc.localize(old_date).astimezone(tz_user).replace(tzinfo=None)
+            print("old_date========>", old_date)
+
             if date_planned:
-                self.message_post(body=_('Receipt date Updated :- %s <i class="fa fa-long-arrow-right"/> %s',self.date_planned,update_time), message_type='comment', subtype_xmlid="mail.mt_comment")
+                self.message_post(body=_('Receipt date Updated :- %s <i class="fa fa-long-arrow-right"/> %s',old_date,update_time), message_type='comment', subtype_xmlid="mail.mt_comment")
 
         return super(PurchaseOrder, self).write(vals)
 
