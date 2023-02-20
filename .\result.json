@@ -1,0 +1,685 @@
+{
+  "document": {
+    "@pageCount": "1",
+    "@pageCountWithOCRPerformed": "0",
+    "page": {
+      "@index": "0",
+      "@width": "612",
+      "@height": "792",
+      "@OCRWasPerformed": "False",
+      "row": [
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "29.61",
+                "@y": "144.99",
+                "@width": "144.63",
+                "@height": "10.25",
+                "#text": "Invoicing and Shipping Address:"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "362.69",
+                "@y": "144.99",
+                "@width": "77.09",
+                "@height": "10.25",
+                "#text": "Gemini Furniture"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "29.61",
+                "@y": "160.36",
+                "@width": "145.60",
+                "@height": "10.25",
+                "#text": "Gemini Furniture, Soham Palmer"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "362.69",
+                "@y": "160.36",
+                "@width": "72.75",
+                "@height": "10.25",
+                "#text": "317 Fairchild Dr"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "29.61",
+                "@y": "175.73",
+                "@width": "72.75",
+                "@height": "10.25",
+                "#text": "317 Fairchild Dr"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "362.69",
+                "@y": "175.73",
+                "@width": "85.08",
+                "@height": "10.25",
+                "#text": "Fairfield CA 94535"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "29.61",
+                "@y": "191.11",
+                "@width": "85.08",
+                "@height": "10.25",
+                "#text": "Fairfield CA 94535"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "362.69",
+                "@y": "191.11",
+                "@width": "60.68",
+                "@height": "10.25",
+                "#text": "United States"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "29.61",
+                "@y": "206.48",
+                "@width": "60.68",
+                "@height": "10.25",
+                "#text": "United States"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "31.85",
+                "@y": "221.85",
+                "@width": "85.05",
+                "@height": "10.25",
+                "#text": " (379)-167-2040"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "20.0",
+                "@x": "29.61",
+                "@y": "235.30",
+                "@width": "145.11",
+                "@height": "20.50",
+                "#text": "Order # S00007"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "29.61",
+                "@y": "266.69",
+                "@width": "54.99",
+                "@height": "10.25",
+                "#text": "Order Date:"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "315.93",
+                "@y": "266.69",
+                "@width": "57.85",
+                "@height": "10.25",
+                "#text": "Salesperson:"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "29.61",
+                "@y": "282.06",
+                "@width": "97.81",
+                "@height": "10.25",
+                "#text": "02/03/2023 11:55:29"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@x": "315.93",
+                "@y": "282.06",
+                "@width": "68.29",
+                "@height": "10.25",
+                "#text": "Mitchell Admin"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "32.17",
+                "@y": "305.76",
+                "@width": "53.58",
+                "@height": "10.25",
+                "#text": "Description"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "361.41",
+                "@y": "305.76",
+                "@width": "41.32",
+                "@height": "10.25",
+                "#text": "Quantity"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "423.54",
+                "@y": "305.76",
+                "@width": "45.67",
+                "@height": "10.25",
+                "#text": "Unit Price"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "483.75",
+                "@y": "305.76",
+                "@width": "26.90",
+                "@height": "10.25",
+                "#text": "Taxes"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "542.68",
+                "@y": "305.76",
+                "@width": "37.31",
+                "@height": "10.25",
+                "#text": "Amount"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "32.17",
+                "@y": "326.90",
+                "@width": "161.14",
+                "@height": "10.25",
+                "#text": "[FURN_6666] Acoustic Bloc Screens"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "356.92",
+                "@y": "326.90",
+                "@width": "45.79",
+                "@height": "10.25",
+                "#text": "5.00 Units"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "436.99",
+                "@y": "326.90",
+                "@width": "31.80",
+                "@height": "10.25",
+                "#text": "295.00"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "532.43",
+                "@y": "326.90",
+                "@width": "47.58",
+                "@height": "10.25",
+                "#text": "1,475.00 €"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "32.17",
+                "@y": "348.04",
+                "@width": "135.14",
+                "@height": "10.25",
+                "#text": "[FURN_8999] Three-Seat Sofa"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "356.92",
+                "@y": "348.04",
+                "@width": "45.79",
+                "@height": "10.25",
+                "#text": "1.00 Units"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "436.99",
+                "@y": "348.04",
+                "@width": "31.80",
+                "@height": "10.25",
+                "#text": "173.00"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "540.12",
+                "@y": "348.04",
+                "@width": "39.89",
+                "@height": "10.25",
+                "#text": "173.00 €"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "32.17",
+                "@y": "363.41",
+                "@width": "232.44",
+                "@height": "10.25",
+                "#text": "Three Seater Sofa with Lounger in Steel Grey Colour"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "32.17",
+                "@y": "384.55",
+                "@width": "117.80",
+                "@height": "10.25",
+                "#text": "[FURN_8888] Office Lamp"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "356.92",
+                "@y": "384.55",
+                "@width": "45.79",
+                "@height": "10.25",
+                "#text": "1.00 Units"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "443.40",
+                "@y": "384.55",
+                "@width": "25.87",
+                "@height": "10.25",
+                "#text": "40.00"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "546.52",
+                "@y": "384.55",
+                "@width": "33.49",
+                "@height": "10.25",
+                "#text": "40.00 €"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "32.17",
+                "@y": "405.69",
+                "@width": "117.95",
+                "@height": "10.25",
+                "#text": "[FURN_7777] Office Chair"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "356.92",
+                "@y": "405.69",
+                "@width": "45.79",
+                "@height": "10.25",
+                "#text": "1.00 Units"
+              }
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "443.40",
+                "@y": "405.69",
+                "@width": "25.87",
+                "@height": "10.25",
+                "#text": "18.00"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "546.52",
+                "@y": "405.69",
+                "@width": "33.49",
+                "@height": "10.25",
+                "#text": "18.00 €"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@fontStyle": "Bold",
+                "@x": "318.49",
+                "@y": "437.07",
+                "@width": "24.00",
+                "@height": "10.25",
+                "#text": "Total"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#202529",
+                "@x": "531.79",
+                "@y": "437.07",
+                "@width": "47.82",
+                "@height": "10.25",
+                "#text": "1,706.00 €"
+              }
+            }
+          ]
+        },
+        {
+          "column": [
+            {
+              "text": {
+                "@fontName": "Times",
+                "@fontSize": "10.0",
+                "@color": "#6C757D",
+                "@x": "282.94",
+                "@y": "718.73",
+                "@width": "46.25",
+                "@height": "10.25",
+                "#text": "Page: 1 / 1"
+              }
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            },
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -18,10 +18,16 @@ git:
  - git status
  - git add --a
  - git commit -m 'message'
- - git push -u origine master/main
+ - git push -u origin main / master
  
 - pip install jupyter notebook       #Run python code in chrome
 	jupyter notebook
+	
+- update app
+	sudo apt-get update
+
+- Upgrae app
+	sudo apt-get upgrade -y
  
  Scaffold Command:
  ./odoo-bin scaffold "module name" /home/jitendra/Jitendra/custom_addons
