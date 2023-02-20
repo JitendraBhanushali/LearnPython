@@ -1,5 +1,12 @@
 
 
+- update app
+	sudo apt-get update
+
+- Upgrae app
+	sudo apt-get upgrade -y
+
+
 git branch change:
 	- git checkout.	all update is remove
 	- git checkout 16.0
@@ -23,13 +30,8 @@ git:
 - pip install jupyter notebook       #Run python code in chrome
 	jupyter notebook
 	
-- update app
-	sudo apt-get update
-
-- Upgrae app
-	sudo apt-get upgrade -y
- 
- Scaffold Command:
+	 
+ Scaffold Command: Use to create New Module 
  ./odoo-bin scaffold "module name" /home/jitendra/Jitendra/custom_addons
  
 
